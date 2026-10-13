@@ -2,58 +2,58 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="src/assets/styles/style.css">
     <title>Контакты</title>
 </head>
 <body>
 
     <header>
         <img src="logo.png" alt="Логотип" width="100">
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-            </ul>
+        <nav class="breadcrumbs">
+            <a href="index.html">Главная</a>
+            <span>/</span>
+            <a href="contacts.html">Контакты</a>
         </nav>
     </header>
 
-    <h2>Contact Us</h2>
-    <p>Мы рады</p>
+    <h2 class="contacts-title">Contact Us</h2>
+    <p class="paragraph-text">Мы рады ответить на ваши вопросы.</p>
 
     <img src="office.png" alt="Наш офис" width="350">
 
-    <h4>Address</h4>
-    <p>ул. Ленина</p>
+    <h4 class="section-title">Address</h4>
+    <p class="paragraph-text">ул. Ленина</p>
 
-    <h4>Phone</h4>
+    <h4 class="section-title">Phone</h4>
     <ul>
         <li>+7 900 123-45-67</li>
         <li>+7 900 765-43-21</li>
     </ul>
 
-    <h4>Online service</h4>
+    <h4 class="section-title">Online service</h4>
     <ul>
         <li><a href="mailto:info@example.com">info@example.com</a></li>
         <li><a href="tel:+79001234567">+7 900 000-00-00</a></li>
     </ul>
 
-    <h4>Send us message</h4>
-    <form>
-        <label>Full Name <input type="text" name="fullname"></label><br>
-        <label>Email <input type="email" name="email"></label><br>
-        <label>Message <textarea name="message"></textarea></label><br>
-        <button type="submit">submit</button>
+    <h4 class="section-title">Send us message</h4>
+    <form class="contact-form">
+        <label>Full Name <input type="text" name="fullname" class="form-input"></label><br>
+        <label>Email <input type="email" name="email" class="form-input"></label><br>
+        <label>Message <textarea name="message" class="form-input"></textarea></label><br>
+        <button type="submit" class="submit-btn">submit</button>
     </form>
 
     <footer>
-        <h3>Свяжитесь с нами</h3>
-        <p>Мы всегда рады ответить на ваши вопросы.</p>
+        <h3 class="subtitle">Свяжитесь с нами</h3>
+        <p class="paragraph-text">Мы всегда рады ответить на ваши вопросы.</p>
         <hr>
         <ul>
             <li>Отдел продаж</li>
             <li>+7 999 999-99-99</li>
             <li>info@example.com</li>
         </ul>
-        <p>Все права защищены</p>
+        <p class="paragraph-text">Все права защищены</p>
     </footer>
 
 </body>
