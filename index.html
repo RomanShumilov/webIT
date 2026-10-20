@@ -1,44 +1,180 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="src/assets/styles/style.css">
-    <title>Главная страница</title>
+    <title>lesson3</title>
 </head>
 <body>
 
-    <header>
-        <img src="logo.png" alt="Логотип" width="100">
-        <nav class="breadcrumbs">
-            <a href="index.html">Главная</a>
-            <span>/</span>
-            <a href="contacts.html">Контакты</a>
+    <header class="site-header">
+        <p class="site-header__logo">IT WEBSITE</p>
+        <nav class="main-nav">
+            <ul class="main-nav__list">
+                <li>Services</li>
+                <li>Media</li>
+                <li>Cases</li>
+                <li>FAQ</li>
+                <li>Contacts</li>
+            </ul>
         </nav>
+        <ul class="header-contacts">
+            <li>+7 (111) 111 11 11</li>
+            <li>itcompany@mail.com</li>
+        </ul>
     </header>
-
-    <h1 class="main-title">Наша компания</h1>
-    <p class="paragraph-text">Мы занимаемся разработкой качественных веб-сайтов уже много лет подряд.</p>
-
-    <h3 class="subtitle">Наши услуги</h3>
-
-    <h4 class="section-title">Разработка и поддержка сайтов</h4>
-    <p class="paragraph-text">Создаём современные сайты и обеспечиваем их техническую поддержку.</p>
-
-    <h3 class="subtitle">О компании</h3>
-    <p class="paragraph-text">Работаем честно и качественно, ценим каждого клиента.</p>
-
     <hr>
 
-    <footer>
-        <h3 class="subtitle">Свяжитесь с нами</h3>
-        <p class="paragraph-text">Мы всегда рады ответить на ваши вопросы.</p>
+    <main>
+
+        <section class="hero">
+            <div class="hero__intro">
+                <h1>Development of mobile applications</h1>
+                <p>We create mobile applications for iOS and Android</p>
+            </div>
+            <div class="hero__callback">
+                <h2>Leave your contacts</h2>
+                <form class="callback-form">
+                    <label>Phone number <input type="tel"></label>
+                    <label>Full name <input type="text"></label>
+                    <button type="submit">Get consultation</button>
+                </form>
+            </div>
+        </section>
         <hr>
-        <ul>
-            <li>Отдел продаж</li>
-            <li>+7 999 999-99-99</li>
-            <li>info@example.com</li>
+
+        <section class="dev-cycle">
+            <div class="dev-cycle__description">
+                <h2>Full development cycle</h2>
+                <p>We use proven technologies</p>
+                <h3>Web</h3>
+                <p>PHP / Javascript / Node.JS</p>
+                <h3>Mobile</h3>
+                <p>Swift / Kotlin / Firebase</p>
+            </div>
+            <div class="dev-cycle__services">
+                <ul class="services-list">
+                    <li class="services-list__item">iOS development</li>
+                    <li class="services-list__item">Android development</li>
+                    <li class="services-list__item">Web development</li>
+                </ul>
+            </div>
+        </section>
+        <hr>
+
+        <section class="industries">
+            <h2>Developed more than 100 projects</h2>
+            <p>In 15 industries</p>
+            <ul class="industries__list">
+                <li class="industries__item">Social media</li>
+                <li class="industries__item">Education</li>
+                <li class="industries__item">Bank</li>
+            </ul>
+        </section>
+        <hr>
+
+        <section class="projects">
+            <h2>Projects we are proud of</h2>
+            <p>We enjoy a long-term partnership</p>
+            <div class="projects__toolbar">
+                <ul class="projects-tabs">
+                    <li class="projects-tabs__item">I-teka</li>
+                    <li class="projects-tabs__item">Dauletten</li>
+                    <li class="projects-tabs__item">Guru Bosch</li>
+                </ul>
+                <button type="button">View 100 more projects</button>
+            </div>
+            <article class="project-card">
+                <h3>I-teka</h3>
+                <p>The application is designed to search for drugs in pharmacies</p>
+                <ul class="project-card__stats">
+                    <li>400% User Growth</li>
+                    <li>+ 200 000 Active Users</li>
+                </ul>
+            </article>
+        </section>
+        <hr>
+
+        <section class="discuss">
+            <div class="discuss__intro">
+                <h2>Let's discuss your project</h2>
+                <p>Its cost and terms of implementation</p>
+            </div>
+            <form class="discuss-form">
+                <label>Best phone number <input type="tel"></label>
+                <label>Full name <input type="text"></label>
+                <button type="submit">Discuss the project</button>
+            </form>
+        </section>
+        <hr>
+
+        <section class="stages">
+            <h2>Application Development Stages</h2>
+            <article class="stage-card">
+                <h3>Analysis</h3>
+                <p>We write technical specifications</p>
+            </article>
+            <article class="stage-card">
+                <h3>Design</h3>
+                <p>We draw convenient interfaces</p>
+            </article>
+            <article class="stage-card">
+                <h3>Development</h3>
+                <p>We write clean and stable code</p>
+            </article>
+        </section>
+        <hr>
+
+        <section class="team">
+            <div class="team__info">
+                <h2>Our team</h2>
+                <p>Full-cycle digital production company</p>
+                <ul class="team__stats">
+                    <li>28 team members</li>
+                    <li>+100 projects</li>
+                    <li>7 years in IT sphere</li>
+                </ul>
+            </div>
+            <figure class="team__video">
+                <figcaption>Video about our team</figcaption>
+            </figure>
+        </section>
+        <hr>
+
+        <section class="free-book">
+            <h2>Get the book for free</h2>
+            <form class="free-book__form">
+                <label>Phone number <input type="tel"></label>
+                <label>Full name <input type="text"></label>
+                <label>Email <input type="email"></label>
+                <button type="submit">Send me ebook to my mail</button>
+            </form>
+        </section>
+        <hr>
+
+        <section class="faq">
+            <h2>FAQ</h2>
+            <ul class="faq__questions">
+                <li class="faq__question">What is the cost of a mobile application?</li>
+                <li class="faq__question">Do you provide a guarantee?</li>
+            </ul>
+            <article class="faq__answer">
+                <h3>How long will development take?</h3>
+                <p>Medium projects up to 3 months, large projects 4-6 months</p>
+            </article>
+        </section>
+
+    </main>
+    <hr>
+
+    <footer class="site-footer">
+        <h2>IT WEBSITE</h2>
+        <ul class="site-footer__contacts">
+            <li>+7 (778) 395 90 26</li>
+            <li>mail@mail.com</li>
+            <li>City city, steet st. 90</li>
+            <li>Leave a request</li>
         </ul>
-        <p class="paragraph-text">Все права защищены</p>
+        <p>We work throughout world</p>
     </footer>
 
 </body>
