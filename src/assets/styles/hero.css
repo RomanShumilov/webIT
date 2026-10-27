@@ -1,0 +1,33 @@
+.hero {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 80px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+ 
+.hero__title {
+    margin: 0 0 32px;
+    font-size: 40px;
+    line-height: 55px;
+    font-weight: 700;
+}
+ 
+.hero__accent {
+    color: var(--blue);
+}
+ 
+.hero__text {
+    margin: 0 0 80px;
+    max-width: 640px;
+    font-size: 16px;
+    line-height: 21px;
+}
+ 
+.hero__image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

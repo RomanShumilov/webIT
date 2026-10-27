@@ -1,11 +1,6 @@
-@import "./global.css";
 @import "./fonts.css";
-@import "./utils.css";
-
-.test {
-    color: yellow !important;
-}
-
-.test {
-    color: red !important;
-}
+@import "./global.css";
+@import "./header.css";
+@import "./hero.css";
+@import "./footer.css";
+@import "./callback.css";
