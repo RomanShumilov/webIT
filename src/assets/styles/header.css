@@ -5,6 +5,10 @@
     padding: 16px 24px 0;
 }
  
+.header__menu-logo {
+    display: none;
+}
+ 
 .header__inner {
     max-width: var(--container);
     margin: 0 auto;
@@ -51,4 +55,171 @@
     height: 18px;
     border: 2px solid var(--blue);
     border-radius: 4px;
+    display: none;
 }
+ 
+.header__menu {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+ 
+.header__toggle,
+.header__burger { display: none; }
+ 
+@media (max-width: 1199px) {
+    .header__inner { gap: 16px; padding: 16px 20px; }
+    .header__menu  { gap: 16px; }
+    .header__list  { gap: 18px; font-size: 14px; }
+    .header__contacts {
+         flex-direction: column; 
+         align-items: baseline; 
+         gap: 6px; 
+         font-size: 14px; 
+        }
+
+    .header__contact  { 
+        align-items: flex-start; 
+        flex-wrap: wrap;
+        gap: 10px; 
+    }
+
+    
+}
+ 
+@media (max-width: 768px) {
+    .header { padding: 12px 16px 0; }
+    .header__inner {
+        display: grid;
+        grid-template-columns: 40px 1fr 40px;
+        align-items: center;
+    }
+
+    .header__burger {
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        width: 40px; 
+        height: 40px; 
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+        grid-column: 1;         
+        grid-row: 1;   
+    }
+ 
+    .header__burger span,
+    .header__burger span::before,
+    .header__burger span::after {
+        display: block; width: 24px; height: 2px; border-radius: 2px;
+        background: var(--text); transition: transform 0.2s, background 0.2s;
+    }
+    .header__burger span { position: relative; }
+    .header__burger span::before,
+    .header__burger span::after { content: ""; position: absolute; left: 0; }
+    .header__burger span::before { top: -7px; }
+    .header__burger span::after  { top: 7px; }
+ 
+    .header__toggle:checked + .header__burger span { background: transparent; }
+    .header__toggle:checked + .header__burger span::before { transform: translateY(7px) rotate(45deg); }
+    .header__toggle:checked + .header__burger span::after  { transform: translateY(-7px) rotate(-45deg); }
+ 
+    .header__menu {
+        display: none;
+        position: fixed;              
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;                      
+        z-index: 1;                   
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;  
+        gap: 32px;
+        padding: 96px 24px 40px;      
+        overflow-y: auto;              
+        background: #fff;
+    }
+    .header__toggle:checked ~ .header__menu { display: flex; }
+ 
+    .header__menu-logo {
+        display: block;
+        font-weight: 700;
+        font-size: 32px;
+        letter-spacing: 1px;
+        color: var(--blue);
+    }
+ 
+    .header__list { 
+        flex-direction: column; 
+        align-items: center;
+        gap: 28px; 
+        font-size: 24px;
+    }
+    
+    .header__contacts {
+        flex-direction: row;
+        flex-wrap: wrap;           
+        justify-content: center;
+        align-items: center;
+        gap: 12px 24px;            
+        font-size: 16px;
+    }
+ 
+    .header__contact {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+ 
+    body:has(.header__toggle:checked) {
+        overflow: hidden;
+    }
+
+    .header__logo { grid-column: 2; grid-row: 1; justify-self: center; }
+}
+ 
+@media (max-width: 425px) {
+    .header { 
+        padding: 8px 12px 0; 
+    }
+ 
+    .header__inner { 
+        padding: 12px 16px; 
+    }
+    
+    .header__menu {
+        padding: 88px 16px 32px;
+        gap: 28px;
+    }
+ 
+    .header__menu-logo {
+        font-size: 28px;
+    }
+ 
+    .header__list {
+        gap: 24px;
+        font-size: 22px;
+    }
+ 
+    .header__contacts {
+        flex-direction: column;
+        gap: 12px;
+    }
+ 
+    .header__contact {
+        flex-direction: column;
+        gap: 4px;
+        font-size: 15px;
+        text-align: center;
+    }
+ 
+    .header__icon {
+        display: none;
+    }
+}
+

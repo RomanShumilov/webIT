@@ -5,18 +5,29 @@
     --bg: #f5f6fa;
     --container: 1280px;
 }
- 
+
+html {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     color: var(--text);
     background: var(--bg);
 }
- 
+
 a {
     color: inherit;
     text-decoration: none;
 }
- 
+
 ul {
     margin: 0;
     padding: 0;
@@ -28,7 +39,7 @@ ul {
     display: flex;
     flex-direction: column;
 }
- 
+
 .main {
     flex: 1 0 auto;
 }
