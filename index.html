@@ -1,1 +1,124 @@
-hello world from Roman
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thousand</title>
+    <link rel="stylesheet" href="src/assets/styles/style.css">
+</head>
+<body class="page">
+ 
+    <header class="header">
+        <div class="header__inner">
+            <a class="header__logo" href="index.html">IT WEBSITE</a>
+
+            <input class="header__toggle" type="checkbox" id="header-toggle">
+            <label class="header__burger" for="header-toggle" aria-label="Open menu"><span></span></label>
+ 
+            <div class="header__menu">
+                <a class="header__menu-logo" href="index.html">THOUSAND</a>
+
+                <nav class="header__nav">
+                    <ul class="header__list">
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#media">Media</a></li>
+                        <li><a href="#cases">Cases</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contacts">Contacts</a></li>
+                    </ul>
+                </nav>
+    
+                <div class="header__contacts">
+                    <div class="header__contact">
+                        <span class="header__icon header__icon--phone"></span>
+                        <a href="tel:+77072548147">+7 (707) 254 81 47</a>
+                        <a href="tel:+77783959026">+7 (778) 395 90 26</a>
+                    </div>
+                    <div class="header__contact">
+                        <span class="header__icon header__icon--mail"></span>
+                        <a href="mailto:thousanditcompany@gmail.com">thousanditcompany@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+ 
+    <main class="main">
+        <section class="hero">
+            <div class="hero__intro">
+                <h1 class="hero__title">
+                    Development of <span class="hero__accent">mobile applications</span> and
+                    <span class="hero__accent">web services</span> of any complexity
+                </h1>
+                <p class="hero__text">We create mobile applications for iOS, Android that transfer your business to mobile applications of your customers' devices</p>
+            </div>
+
+            <div class="hero__image" aria-hidden="true">
+                <div class="hero__strip hero__strip--up"></div>
+                <div class="hero__strip hero__strip--down"></div>
+            </div>
+
+            <div class="callback">
+                <form class="callback__form">
+                    <div class="callback__field">
+                        <label class="callback__label" for="callback-phone">Phone number</label>
+                        <input class="callback__input" type="tel" id="callback-phone" name="phone">
+                    </div>
+                    <div class="callback__field">
+                        <label class="callback__label" for="callback-name">Full name</label>
+                        <input class="callback__input" type="text" id="callback-name" name="fullname">
+                    </div>
+                    <button class="callback__button" type="submit">Get consultation</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="dev-cycle" id="services">
+            <div class="dev-cycle__description">
+                <h2 class="dev-cycle__title">Full development cycle</h2>
+                <p class="dev-cycle__lead">We use proven technologies</p>
+                <h3 class="dev-cycle__subtitle">Web</h3>
+                <p class="dev-cycle__tech">PHP / Javascript / Node.JS / Web Socket / Socket.io / Vue.js / Nuxt / MySQL / Laravel / GO lang / django / Python</p>
+                <h3 class="dev-cycle__subtitle">Mobile</h3>
+                <p class="dev-cycle__tech">Swift / Kotlin / Alamofire / Firebase / CoreData / Room / Realm / Coroutine / RxJava / RxSwift / Unit Test / Navigation</p>
+            </div>
+            <ul class="services-list">
+                <li class="services-list__item"><a href="#">iOS development</a></li>
+                <li class="services-list__item"><a href="#">Android development</a></li>
+                <li class="services-list__item"><a href="#">Web development</a></li>
+                <li class="services-list__item"><a href="#">UI/UX design</a></li>
+                <li class="services-list__item"><a href="#">Testing</a></li>
+                <li class="services-list__item"><a href="#">Launch</a></li>
+                <li class="services-list__item"><a href="#">IT consulting</a></li>
+            </ul>
+        </section>
+
+    </main>
+ 
+    <footer class="footer" id="contacts">
+        <div class="footer__inner">
+            <p class="footer__logo">IT WEBSITE</p>
+            <ul class="footer__list">
+                <li class="footer__item">
+                    <span class="footer__label">Contact nums</span>
+                    <a href="tel:+77783959026">+7 (778) 395 90 26</a>
+                </li>
+                <li class="footer__item">
+                    <span class="footer__label">Post</span>
+                    <a href="mailto:mail@mail.com">mail@mail.com</a>
+                </li>
+                <li class="footer__item">
+                    <span class="footer__label">Adress</span>
+                    <span>City city, steet st. 90</span>
+                </li>
+                <li class="footer__item">
+                    <span class="footer__label">Leave a request</span>
+                    <a href="#">Leave a request</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+ 
+</body>
+</html>
+

@@ -1,0 +1,19 @@
+$weights: ("Bold": 700, "Medium": 500, "Regular": 400);
+
+@each $name, $weight in $weights {
+  @font-face {
+    font-family: "Inter";
+    src: local("Inter"), local("Inter-#{$name}"), local("Inter #{$name}"),
+         url("/static/fonts/Inter-#{$name}.ttf") format("truetype"),
+         url("/static/fonts/Inter-#{$name}.woff2") format("woff");
+    font-weight: $weight;
+  }
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter Italic"), local("Inter-Italic"),
+       url("/static/fonts/Inter-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}

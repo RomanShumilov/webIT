@@ -1,0 +1,202 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 16px 24px 0;
+
+  @include tablet { padding: 12px 16px 0; }
+  @include mobile { padding: 8px 12px 0; }
+
+  &__menu-logo {
+    display: none;
+
+    @include tablet {
+      display: block;
+      font-weight: 700;
+      font-size: 32px;
+      letter-spacing: 1px;
+      color: var(--blue);
+    }
+    @include mobile { font-size: 28px; }
+  }
+
+  &__inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: $shadow-card;
+
+    @include laptop { gap: 16px; padding: 16px 20px; }
+    @include tablet {
+      display: grid;
+      grid-template-columns: 40px 1fr 40px;
+      align-items: center;
+    }
+    @include mobile { padding: 12px 16px; }
+  }
+
+  &__logo {
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: var(--blue);
+
+    @include tablet { grid-column: 2; grid-row: 1; justify-self: center; }
+  }
+
+  &__list {
+    display: flex;
+    gap: 26px;
+    font-weight: 500;
+    font-size: 15px;
+
+    @include laptop { gap: 18px; font-size: 14px; }
+    @include tablet {
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+      font-size: 24px;
+    }
+    @include mobile { gap: 24px; font-size: 22px; }
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 15px;
+    color: var(--blue);
+
+    @include laptop {
+      flex-direction: column;
+      align-items: baseline;
+      gap: 6px;
+      font-size: 14px;
+    }
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 12px 24px;
+      font-size: 16px;
+    }
+    @include mobile { flex-direction: column; gap: 12px; }
+  }
+
+  &__contact {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    @include laptop { align-items: flex-start; flex-wrap: wrap; gap: 10px; }
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+    @include mobile {
+      flex-direction: column;
+      gap: 4px;
+      font-size: 15px;
+      text-align: center;
+    }
+  }
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--blue);
+    border-radius: 4px;
+    display: none;
+  }
+
+  &__menu {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    @include laptop { gap: 16px; }
+
+    @include tablet {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 32px;
+      padding: 96px 24px 40px;
+      overflow-y: auto;
+      background: #fff;
+    }
+    @include mobile { padding: 88px 16px 32px; gap: 28px; }
+
+    .header__toggle:checked ~ & {
+      @include tablet { display: flex; }
+    }
+  }
+
+  &__toggle,
+  &__burger { display: none; }
+
+  &__burger {
+    @include tablet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      position: relative;
+      z-index: 2;
+      grid-column: 1;
+      grid-row: 1;
+
+      span,
+      span::before,
+      span::after {
+        display: block;
+        width: 24px;
+        height: 2px;
+        border-radius: 2px;
+        background: var(--text);
+        transition: transform 0.2s, background 0.2s;
+      }
+      span { position: relative; }
+      span::before,
+      span::after { content: ""; position: absolute; left: 0; }
+      span::before { top: -7px; }
+      span::after { top: 7px; }
+    }
+
+    .header__toggle:checked + & {
+      @include tablet {
+        span { background: transparent; }
+        span::before { transform: translateY(7px) rotate(45deg); }
+        span::after { transform: translateY(-7px) rotate(-45deg); }
+      }
+    }
+  }
+}
+
+@include tablet {
+  body:has(.header__toggle:checked) { overflow: hidden; }
+}

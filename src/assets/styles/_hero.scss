@@ -1,0 +1,96 @@
+@use "sass:math";
+@use "mixins" as *;
+
+$strip-ratio: math.div(1959, 293);
+
+.hero {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 80px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "intro image"
+    "form  image";
+  column-gap: 40px;
+
+  @include laptop { padding: 60px 24px; column-gap: 24px; }
+  @include tablet { padding: 40px 16px; }
+  @include mobile {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "intro"
+      "image"
+      "form";
+    padding: 24px 12px 32px;
+    gap: 16px;
+  }
+
+  &__intro { grid-area: intro; align-self: end; }
+
+  &__image {
+    grid-area: image;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    height: 640px;
+    overflow: hidden;
+
+    @include tablet { height: 520px; }
+    @include mobile { height: 360px; }
+  }
+
+  &__strip {
+    --strip-w: clamp(120px, 21vw, 288px);
+    --strip-h: calc(var(--strip-w) * #{$strip-ratio});
+
+    flex: none;
+    width: var(--strip-w);
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+
+    &--up {
+      background-image: url("../img/column-left.webp");
+      animation: strip-up 40s linear infinite;
+    }
+    &--down {
+      background-image: url("../img/column-right.webp");
+      animation: strip-down 50s linear infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) { animation: none; }
+  }
+
+  &__title {
+    margin: 0 0 32px;
+    font-size: 40px;
+    line-height: 55px;
+    font-weight: 700;
+
+    @include laptop { font-size: 34px; line-height: 46px; }
+    @include tablet { font-size: 30px; line-height: 40px; }
+    @include mobile { margin: 0 0 16px; font-size: 26px; line-height: 34px; }
+  }
+
+  &__accent { color: var(--blue); }
+
+  &__text {
+    margin: 0 0 80px;
+    font-size: 16px;
+    line-height: 21px;
+
+    @include laptop { margin-bottom: 48px; }
+    @include tablet { margin-bottom: 32px; }
+    @include mobile { margin: 0; font-size: 15px; }
+  }
+}
+
+@keyframes strip-up {
+  from { background-position-y: 0; }
+  to   { background-position-y: calc(var(--strip-h) * -1); }
+}
+@keyframes strip-down {
+  from { background-position-y: calc(var(--strip-h) * -1); }
+  to   { background-position-y: 0; }
+}

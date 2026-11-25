@@ -1,0 +1,77 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.callback {
+  grid-area: form;
+  align-self: start;
+  padding: 32px 26px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: $shadow-card;
+
+  @include laptop { padding: 24px 20px; }
+  @include mobile { padding: 20px 16px; }
+
+  &__title {
+    margin: 0 0 32px;
+    max-width: 520px;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 700;
+
+    @include mobile { margin-bottom: 20px; font-size: 18px; line-height: 23px; }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 24px;
+    align-items: end;
+
+    @include laptop {
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 20px;
+    }
+    @include mobile { grid-template-columns: 1fr; gap: 16px; }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  &__label {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  &__input {
+    width: 100%;
+    padding: 8px 0;
+    border: none;
+    border-bottom: 1px solid $border;
+    font-size: 18px;
+    font-family: inherit;
+    outline: none;
+
+    &:focus { border-bottom-color: var(--blue); }
+
+    @include mobile { font-size: 16px; }
+  }
+
+  &__button {
+    padding: 16px 24px;
+    border: none;
+    border-radius: 6px;
+    background: var(--blue);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+
+    @include laptop { grid-column: 1 / -1; }
+  }
+}
