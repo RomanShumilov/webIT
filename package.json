@@ -1,0 +1,9 @@
+{
+  "name": "web-technologies-2024",
+  "private": true,
+  "scripts": {
+    "scss": "sass --no-source-map --watch src/assets/styles/style.scss:src/assets/styles/style.css",
+    "build:css": "sass --no-source-map src/assets/styles/style.scss:src/assets/styles/style.css"
+  },
+  "devDependencies": { "sass": "^1.80.0" }
+}

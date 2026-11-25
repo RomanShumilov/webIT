@@ -1,0 +1,15 @@
+@use "variables" as *;
+
+.bold {
+  font-family: $font-main;
+  font-weight: 700;
+}
+
+.medium {
+  font-family: $font-main;
+  font-weight: 500;
+}
+
+.italic {
+  font-style: italic;
+}
